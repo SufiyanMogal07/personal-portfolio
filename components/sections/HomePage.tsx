@@ -1,10 +1,20 @@
+"use client";
+
 import { FileText, Send } from "lucide-react";
 
 const HomePage = () => {
+
+  const scrollToSection = (id: string) => {
+    const element = document.querySelector(id);
+
+    if(element) {
+      element.scrollIntoView({});
+    }
+  }
   return (
     <div
       id="home"
-      className="mx-auto bg-red-20 min-h-[70vh] md:h-[60%] lg:h-[70%] xl:h-[80vh] w-full md:pt-5 flex flex-col justify-center gap-y-4 md:text-left font-ubuntu"
+        className="mx-auto h-screen lg:h-screen w-full flex flex-col justify-center gap-y-2 md:gap-y-4 md:text-left font-ubuntu pt-16 md:pt-16 lg:pt-32"
     >
       <h1 className="text-3xl lg:text-4xl xl:text-[40px] font-bold leading-10">
         Hi, I{"'"}m{" "}
@@ -13,7 +23,7 @@ const HomePage = () => {
         </span>
         <span className="dark:"> - A Frontend Developer.</span>
       </h1>
-      <p className="text-[17px] xl:text-[20px] md:leading-6 text-gray-500 dark:text-gray-400">
+      <p className="text-[17px] lg:text-[20px] md:leading-6 text-gray-500 dark:text-gray-400">
         I love turning ideas into clean, responsive, and user-focused web
         experiences. I care deeply about crafting smooth interfaces, writing
         thoughtful logic, and continuously learning to build better products
@@ -36,7 +46,7 @@ const HomePage = () => {
           {" "}
           <FileText className="rotate-4 mr-2" size={16} /> Resume / CV
         </button>
-        <button className="bg-black/80 hover:bg-black/70 text-white dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-black border-gray-100/30 px-3 py-2 rounded-lg flex items-center">
+        <button onClick={() => scrollToSection("#contact")} className="bg-black/80 hover:bg-black/70 text-white dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-black border-gray-100/30 px-3 py-2 rounded-lg flex items-center">
           <Send className="mr-1.5" size={16} /> Get in touch
         </button>
       </div>

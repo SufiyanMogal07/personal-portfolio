@@ -65,7 +65,7 @@ export const Contact = () => {
   };
 
   return (
-    <div id="contact" className="h-screen max-w-2xl mx-auto bg-gren-300 pt-24">
+    <div id="contact" className="h-screen max-w-2xl mx-auto pt-24 mb-24">
       <h1 className="text-center text-4xl font-bold my-4">Get In Touch</h1>
       <h5 className="font-semibold text-center text-[15px] text-gray-500 dark:text-gray-300">
         Please contact me directly at{" "}
@@ -87,7 +87,7 @@ export const Contact = () => {
             type="text"
             id="name"
             placeholder="Enter Your Name"
-            className="border placeholder:text-gray-300 py-2 px-4 rounded border-gray-100/30"
+            className="border py-2 px-4 rounded border-gray-400 dark:border-gray-100/30"
             required
             value={data.name}
             onChange={(e) => {
@@ -103,7 +103,7 @@ export const Contact = () => {
             type="email"
             id="email"
             placeholder="example@gmail.com"
-            className="border placeholder:text-gray-300 py-2 px-4 rounded border-gray-100/30"
+            className="border py-2 px-4 rounded border-gray-400 dark:border-gray-100/30"
             required
             value={data.email}
             onChange={(e) => {
@@ -126,7 +126,7 @@ export const Contact = () => {
             }}
           />
         </div>
-        <button className="border justify-center inline-block self-center px-5 py-1 rounded-full text-sm bg-white text-black">
+        <button className="bg-black/80 hover:bg-black/70 text-white dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-black justify-center w-fit mx-auto px-9 py-2 rounded-full text-[16px] font-semibold">
           {isSubmiting ? "Submiting..." : "Submit"}
         </button>
       </form>
