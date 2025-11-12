@@ -7,11 +7,8 @@ interface NavBarProps {
   isDropDownOpen: boolean;
   handleDropDown: () => void;
 }
-const NavBar = ({ isDropDownOpen, handleDropDown }: NavBarProps) => {
-  const { theme, setTheme, systemTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
 
-  const handleSectionScroll = (id: string) => {
+export const handleSectionScroll = (id: string) => {
     const isHome = id.includes("home");
     const element = document.querySelector(id);
     
@@ -21,6 +18,10 @@ const NavBar = ({ isDropDownOpen, handleDropDown }: NavBarProps) => {
       element?.scrollIntoView({behavior: "smooth", block: "start"});
     }
   };
+
+const NavBar = ({ isDropDownOpen, handleDropDown }: NavBarProps) => {
+  const { theme, setTheme, systemTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
     <header className="container-responsive sticky inset-x-0 top-0 md:top-2 z-60 font-roboto">
