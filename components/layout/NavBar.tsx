@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { navData } from "@/data/navbar";
 import { useTheme } from "next-themes";
@@ -12,9 +11,19 @@ const NavBar = ({ isDropDownOpen, handleDropDown }: NavBarProps) => {
   const { theme, setTheme, systemTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 
+  const handleSectionScroll = (id: string) => {
+    const isHome = id.includes("home");
+    const element = document.querySelector(id);
+    
+    if(isHome) {
+      window.scrollTo({top: 0, behavior: "smooth"})
+    } else if(element){
+      element?.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+  };
 
   return (
-    <header className="container-responsive fixed inset-x-0 top-0 md:top-2 z-60 font-roboto">
+    <header className="container-responsive sticky inset-x-0 top-0 md:top-2 z-60 font-roboto">
       <div className="bg-white/60 border-gray-300 dark:bg-white/10 dark:border-gray-100/20 backdrop-blur-md dark:backdrop-blur-sm shadow-[0_0_20px_rgba(112,100,240,0.2)] border md:rounded-full px-4 md:px-10 py-5 mx-auto flex justify-between items-center">
         <h2 className="text-2xl lg:text-[26px] font-extrabold">
           sufiyan
@@ -24,13 +33,13 @@ const NavBar = ({ isDropDownOpen, handleDropDown }: NavBarProps) => {
           <nav className="hidden md:block space-x-8 text-[16px]">
             {navData.map((value) => {
               return (
-                <Link
+                <span
                   key={value.id}
                   className="pb-1 hover:border-b-3 hover:border-b-black dark:hover:border-b-white"
-                  href={value.url}
+                  onClick={() => handleSectionScroll(value.url)}
                 >
                   {value.label}
-                </Link>
+                </span>
               );
             })}
           </nav>

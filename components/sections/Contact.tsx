@@ -65,7 +65,7 @@ export const Contact = () => {
   };
 
   return (
-    <div id="contact" className="h-screen max-w-2xl mx-auto pt-24 mb-24">
+    <div id="contact" className="min-h-screen max-w-2xl mx-auto pt-24 mb-18">
       <h1 className="text-center text-4xl font-bold my-4">Get In Touch</h1>
       <h5 className="font-semibold text-center text-[15px] text-gray-500 dark:text-gray-300">
         Please contact me directly at{" "}
