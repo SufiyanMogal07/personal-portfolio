@@ -21,7 +21,7 @@ export const ProjectCard = ({ project, idx }: ProjectCardProps) => {
       key={idx}
       className="w-full flex flex-col bg-gray-50 dark:bg-blue-950/30 border border-black/30 dark:border-white/20 rounded-xl overflow-hidden transition-transform hover:translate-y-0.5"
     >
-      {/* 🔹 Fixed aspect ratio wrapper */}
+
       <div className="relative w-full aspect-video overflow-hidden">
         <Image
           src={project.thumbnail}
@@ -33,9 +33,8 @@ export const ProjectCard = ({ project, idx }: ProjectCardProps) => {
         />
       </div>
 
-      {/* 🔹 Text content area */}
-      <div className="flex flex-col justify-between px-5 py-4 grow">
-        <div className="flex flex-wrap items-center justify-between gap-y-2">
+      <div className="flex flex-col justify-between px-4 md:px-5 py-6 md:py-4 grow">
+        <div className="flex flex-col justify-between gap-y-2">
           <h2 className="text-lg md:text-xl font-semibold">{project.name}</h2>
           <div className="flex gap-x-2">
             <ToolTip icon={Globe} url={project.live} label="Live" />
