@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
   const [data, setData] = useState({
@@ -10,126 +10,116 @@ export const Contact = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID ?? "";
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID ?? "";
   const PUBLIC_ID = process.env.NEXT_PUBLIC_EMAIL_KEY ?? "";
 
-  const [isSubmiting, setIsSubmiting] = useState(false);
-
   const handleChange = (value: string, name: string) => {
-    console.log(name, value);
-    setData((prev) => {
-      return { ...prev, [name]: value };
-    });
+    setData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: FormEvent) => {
-    setIsSubmiting(true);
-
     e.preventDefault();
-
-    const time = new Date().toLocaleString();
+    setIsSubmitting(true);
 
     const form_data = {
       to_name: "Sufiyan Mogal",
       from_name: data.name,
       reply_to: data.email,
       message: data.message,
-      time,
+      time: new Date().toLocaleString(),
     };
 
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, form_data, PUBLIC_ID)
       .then(() => {
-        handleClear();
         alert("Message Sent!");
+        setData({ name: "", email: "", message: "" });
       })
       .catch((error) => {
         alert("Something Went Wrong");
         console.error(error);
       })
-      .finally(() => {
-        setIsSubmiting(false);
-      });
-  };
-
-  const handleClear = () => {
-    setData((prev) => {
-      return {
-        ...prev,
-        name: "",
-        email: "",
-        message: "",
-      };
-    });
+      .finally(() => setIsSubmitting(false));
   };
 
   return (
-    <div id="contact" className="min-h-screen max-w-2xl mx-auto pt-24 mb-18">
-      <h1 className="text-center text-4xl font-bold my-4">Get In Touch</h1>
-      <h5 className="font-semibold text-center text-[15px] text-gray-500 dark:text-gray-300">
-        Please contact me directly at{" "}
-        <a className="underline" href="mailto:sufiyanmogal04@gmail.com">
-          sufiyanmogal04@gmail.com
-        </a>{" "}
-        or through these form
-      </h5>
+    <section
+      id="contact"
+      className="flex flex-col items-center justify-center min-h-screen px-2 lg:px-8 pt-26 pb-14"
+    >
+      <div className="w-full max-w-2xl">
+        <h1 className="text-center text-4xl font-bold mb-4">Get In Touch</h1>
+        <p className="text-center text-gray-600 dark:text-gray-300 text-[15px] mb-8">
+          Please contact me directly at{" "}
+          <a
+            className="underline underline-offset-4 decoration-2 decoration-blue-500 hover:text-blue-600"
+            href="mailto:sufiyanmogal04@gmail.com"
+          >
+            sufiyanmogal04@gmail.com
+          </a>{" "}
+          or through this form.
+        </p>
 
-      <form
-        onSubmit={(e) => handleSubmit(e)}
-        className="mx-auto mt-10 space-y-6 flex flex-col"
-      >
-        <div className="flex flex-col gap-y-2">
-          <label htmlFor="name" className="font-bold">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter Your Name"
-            className="border py-2 px-4 rounded border-gray-400 dark:border-gray-100/30"
-            required
-            value={data.name}
-            onChange={(e) => {
-              handleChange(e.target.value, "name");
-            }}
-          />
-        </div>
-        <div className="flex flex-col gap-y-2">
-          <label htmlFor="email" className="font-bold">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            placeholder="example@gmail.com"
-            className="border py-2 px-4 rounded border-gray-400 dark:border-gray-100/30"
-            required
-            value={data.email}
-            onChange={(e) => {
-              handleChange(e.target.value, "email");
-            }}
-          />
-        </div>
-        <div className="flex flex-col gap-y-2">
-          <label htmlFor="message" className="font-bold">
-            Message
-          </label>
-          <textarea
-            rows={6}
-            placeholder="Hello! Whatsup ?"
-            className="border py-2 px-4 resize-none border-gray-400 dark:border-gray-100/30"
-            required
-            value={data.message}
-            onChange={(e) => {
-              handleChange(e.target.value, "message");
-            }}
-          />
-        </div>
-        <button className="bg-black/80 hover:bg-black/70 text-white dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-black justify-center w-fit mx-auto px-9 py-2 rounded-full text-[16px] font-semibold">
-          {isSubmiting ? "Submiting..." : "Submit"}
-        </button>
-      </form>
-    </div>
+        <form
+          onSubmit={handleSubmit}
+          className="rounded-2xl shadow-md p-6 sm:p-8 flex flex-col gap-5"
+        >
+          <div>
+            <label htmlFor="name" className="font-semibold block mb-1">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter Your Name"
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+              value={data.name}
+              onChange={(e) => handleChange(e.target.value, "name")}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="font-semibold block mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="example@gmail.com"
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+              value={data.email}
+              onChange={(e) => handleChange(e.target.value, "email")}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="message" className="font-semibold block mb-1">
+              Message
+            </label>
+            <textarea
+              id="message"
+              rows={5}
+              placeholder="Hello! What's up?"
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-3 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+              value={data.message}
+              onChange={(e) => handleChange(e.target.value, "message")}
+            />
+          </div>
+
+          <button
+            disabled={isSubmitting}
+            className="bg-black/80 text-white hover:bg-black/70 dark:bg-white dark:text-black dark:hover:bg-white/80  disabled:bg-gray-500 font-semibold rounded-full py-2 px-6 transition-colors w-fit mx-auto"
+          >
+            {isSubmitting ? "Submitting..." : "Submit"}
+          </button>
+        </form>
+      </div>
+    </section>
   );
 };

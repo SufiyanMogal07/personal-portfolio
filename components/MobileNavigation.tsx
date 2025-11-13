@@ -16,7 +16,7 @@ export const MobileNavigation = ({ onClose }: MobileNavigationProps) => {
                 handleSectionScroll(value.url);
                 onClose();
               }}
-              className="text-2xl font-mono border-b pb-1 text-gray-100 border-gray-100/20 text-center"
+              className="text-2xl font-mono border-b pb-1 text-gray-100 border-gray-100/20 text-center cursor-pointer"
               key={value.id}
             >
               {value.label}

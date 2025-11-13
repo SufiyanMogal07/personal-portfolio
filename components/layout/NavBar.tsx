@@ -36,7 +36,7 @@ const NavBar = ({ isDropDownOpen, handleDropDown }: NavBarProps) => {
               return (
                 <span
                   key={value.id}
-                  className="pb-1 hover:border-b-3 hover:border-b-black dark:hover:border-b-white"
+                  className="pb-1 hover:border-b-3 hover:border-b-black dark:hover:border-b-white cursor-pointer"
                   onClick={() => handleSectionScroll(value.url)}
                 >
                   {value.label}
