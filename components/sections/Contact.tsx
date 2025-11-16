@@ -48,9 +48,9 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center justify-center min-h-screen px-2 lg:px-8 pt-26 pb-14"
+      className="flex flex-col items-center justify-center w-full h-auto md:py-14 pb-20"
     >
-      <div className="w-full max-w-2xl">
+      <div className="w-full max-w-2xl pt-10">
         <h1 className="text-center text-4xl font-bold mb-4">Get In Touch</h1>
         <p className="text-center text-gray-600 dark:text-gray-300 text-[15px] mb-8">
           Please contact me directly at{" "}
@@ -65,7 +65,7 @@ export const Contact = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl shadow-md p-6 sm:p-8 flex flex-col gap-5"
+          className="rounded-2xl shadow-md dark:shadow-gray-100/10 p-6 sm:p-8 flex flex-col gap-5"
         >
           <div>
             <label htmlFor="name" className="font-semibold block mb-1">

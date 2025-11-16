@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div
       id="home"
-      className="mx-auto min-h-[calc(100vh-100px)] w-full flex flex-col justify-center gap-y-4 md:gap-y-6 text-left font-ubuntu"
+      className="w-full h-[80vh] max-h-[900px] mx-auto flex flex-col justify-center gap-y-4 md:gap-y-6 text-left font-ubuntu"
     >
       <h1 className="text-3xl lg:text-4xl xl:text-[40px] font-bold leading-10">
         Hi, I{"'"}m{" "}
@@ -22,14 +22,22 @@ const HomePage = () => {
         </span>
         <span> - A Frontend Developer.</span>
       </h1>
-      
-      <p className="text-[17px] lg:text-[20px] leading-7 text-gray-500 dark:text-gray-400 max-w-3xl">
-        I love turning ideas into clean, responsive, and user-focused web
-        experiences. I care deeply about crafting smooth interfaces, writing
-        thoughtful logic, and continuously learning to build better products
-        every day.
-      </p>
-      
+
+      <div className="text-[17px] lg:text-[20px] leading-7 text-gray-500 dark:text-gray-400 ">
+        <ul className="list-disc list-inside space-y-1 lg:space-y-2">
+          <li>
+            I design clean, responsive UIs and build them with React & Next.js.
+          </li>
+          <li>
+            I write efficient, maintainable logic for smooth user experiences.
+          </li>
+          <li>
+            I combine design sense with solid engineering to ship polished
+            products.
+          </li>
+        </ul>
+      </div>
+
       <div className="mt-2 flex flex-wrap justify-start gap-3 text-sm md:text-base">
         {["TypeScript", "React", "Next.js", "Tailwind CSS", "PHP", "MYSQL"].map(
           (tech) => (
@@ -42,19 +50,28 @@ const HomePage = () => {
           )
         )}
       </div>
-      
-      <div className="mt-6 flex justify-start gap-x-4">
-        <button className="border dark:border-gray-100/20 dark:hover:bg-black/10 backdrop-blur-sm hover:shadow-md shadow-sm shadow-blue-700 px-4 py-2.5 rounded-lg flex items-center transition-all duration-300 text-base">
-          <FileText className="mr-2" size={18} /> 
-          Resume / CV
-        </button>
-        <button 
-          onClick={() => scrollToSection("#contact")} 
-          className="bg-black/80 hover:bg-black/70 text-white dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-black border-gray-100/30 px-4 py-2.5 rounded-lg flex items-center text-base"
-        >
-          <Send className="mr-2" size={18} /> 
-          Get in touch
-        </button>
+
+      <div className="mt-3 md:mt-6 flex flex-col lg:flex-row justify-start items-start lg:items-center gap-6">
+        <div className="flex gap-x-4">
+          <a target="_blank" href="/resume/sufiyan-mogal-resume.pdf" rel="noopener noreferrer">
+            <button className="border dark:border-gray-100/20 dark:hover:bg-black/10 backdrop-blur-sm hover:shadow-md shadow-sm shadow-blue-700 px-4 py-2.5 rounded-lg flex items-center transition-all duration-300 text-base">
+              <FileText className="mr-2" size={18} />
+              Resume / CV
+            </button>
+          </a>
+          <button
+            onClick={() => scrollToSection("#contact")}
+            className="bg-black/80 hover:bg-black/70 text-white dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-black border-gray-100/30 px-4 py-2.5 rounded-lg flex items-center text-base"
+          >
+            <Send className="mr-2" size={18} />
+            Get in touch
+          </button>
+        </div>
+        {/* <div className="space-x-4 flex gap-x-3">
+          <a className="social-badge" href=""><Github size={18}/> Github</a>
+          <a className="inline-flex items-center gap-x-1.5 bg-black px-3 py-2.5 rounded-md" href=""><Linkedin size={18}/> LinkedIn</a>
+          <a className="inline-flex items-center gap-x-1.5 bg-black px-3 py-2.5 rounded-md" href=""><Twitter size={18}/> Twitter</a>
+        </div> */}
       </div>
     </div>
   );
