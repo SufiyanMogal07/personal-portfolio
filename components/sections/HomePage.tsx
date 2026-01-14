@@ -53,7 +53,7 @@ const HomePage = () => {
 
       <div className="mt-3 md:mt-6 flex flex-col lg:flex-row justify-start items-start lg:items-center gap-6">
         <div className="flex gap-x-4">
-          <a target="_blank" href="/resume/sufiyan-mogal-resume.pdf" rel="noopener noreferrer">
+          <a target="_blank" href="/resume/sufiyan_mogal_resume.pdf" rel="noopener noreferrer">
             <button className="border dark:border-gray-100/20 dark:hover:bg-black/10 backdrop-blur-sm hover:shadow-md shadow-sm shadow-blue-700 px-4 py-2.5 rounded-lg flex items-center transition-all duration-300 text-base">
               <FileText className="mr-2" size={18} />
               Resume / CV
