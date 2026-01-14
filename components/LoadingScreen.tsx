@@ -20,7 +20,7 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         clearInterval(interval);
         setTimeout(() => {
           onComplete();
-        }, 700);
+        }, 300);
       }
     }, 100);
 
