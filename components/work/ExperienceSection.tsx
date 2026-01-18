@@ -2,15 +2,6 @@ import Image from "next/image";
 import { experienceData, experienceDataType } from "@/data/work";
 
 export const ExperienceSection = () => {
-  // const socialLinks = [
-  //   {
-  //     label: "Website",
-  //     link: "",
-  //     icon: Globe,
-  //   },
-  // ];
-
-
 
   return (
     <div className="mt-10">

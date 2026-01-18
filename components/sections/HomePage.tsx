@@ -16,26 +16,19 @@ const HomePage = () => {
       className="w-full h-[80vh] max-h-[900px] mx-auto flex flex-col justify-center gap-y-4 md:gap-y-6 text-left font-ubuntu"
     >
       <h1 className="text-3xl lg:text-4xl xl:text-[40px] font-bold leading-10">
-        Hi, I{"'"}m{" "}
         <span className="bg-linear-to-r from-[#5A527E] to-[#7064F0] dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
           Sufiyan Mogal
         </span>
-        <span> - A Frontend Developer.</span>
+        <span>
+          {" "}
+          - Frontend Developer focused on High-Performance React Systems.
+        </span>
       </h1>
 
       <div className="text-[17px] lg:text-[20px] leading-7 text-gray-500 dark:text-gray-400 ">
-        <ul className="list-disc list-inside space-y-1 lg:space-y-2">
-          <li>
-            I design clean, responsive UIs and build them with React & Next.js.
-          </li>
-          <li>
-            I write efficient, maintainable logic for smooth user experiences.
-          </li>
-          <li>
-            I combine design sense with solid engineering to ship polished
-            products.
-          </li>
-        </ul>
+        <h3 className="font">
+         Previously at Awwaltech , where I accelerated release cycles by 20% and reduced UI regressions by 30%. I specialize in building type-safe, scalable applications using Next.js and TypeScript that consistently achieve 90+ Lighthouse scores.
+        </h3>
       </div>
 
       <div className="mt-2 flex flex-wrap justify-start gap-3 text-sm md:text-base">
@@ -47,13 +40,17 @@ const HomePage = () => {
             >
               {tech}
             </span>
-          )
+          ),
         )}
       </div>
 
       <div className="mt-3 md:mt-6 flex flex-col lg:flex-row justify-start items-start lg:items-center gap-6">
         <div className="flex gap-x-4">
-          <a target="_blank" href="/resume/sufiyan_mogal_resume.pdf" rel="noopener noreferrer">
+          <a
+            target="_blank"
+            href="/resume/sufiyan_mogal_resume.pdf"
+            rel="noopener noreferrer"
+          >
             <button className="border dark:border-gray-100/20 dark:hover:bg-black/10 backdrop-blur-sm hover:shadow-md shadow-sm shadow-blue-700 px-4 py-2.5 rounded-lg flex items-center transition-all duration-300 text-base">
               <FileText className="mr-2" size={18} />
               Resume / CV
