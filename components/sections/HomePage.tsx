@@ -64,11 +64,6 @@ const HomePage = () => {
             Get in touch
           </button>
         </div>
-        {/* <div className="space-x-4 flex gap-x-3">
-          <a className="social-badge" href=""><Github size={18}/> Github</a>
-          <a className="inline-flex items-center gap-x-1.5 bg-black px-3 py-2.5 rounded-md" href=""><Linkedin size={18}/> LinkedIn</a>
-          <a className="inline-flex items-center gap-x-1.5 bg-black px-3 py-2.5 rounded-md" href=""><Twitter size={18}/> Twitter</a>
-        </div> */}
       </div>
     </div>
   );
