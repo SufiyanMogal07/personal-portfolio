@@ -25,7 +25,7 @@ export const BrowserFrame = ({ children }: { children: React.ReactNode }) => {
         <div className="bg-yellow-500 w-3 h-3 rounded-full"></div>
       </div>
 
-      <div className="relative w-full h-50 overflow-hidden rounded-b-lg">
+      <div className="relative w-full aspect-video overflow-hidden rounded-b-lg">
         {children}
       </div>
     </div>
@@ -36,25 +36,14 @@ export const ProjectCard = ({ project, idx }: ProjectCardProps) => {
   return (
     <div
       key={idx}
-      className="md:w-[80%] lg:w-full flex flex-col bg-gray-50 dark:bg-blue-950/30 border border-black/30 dark:border-white/20 rounded-xl overflow-hidden transition-transform hover:translate-y-0.5"
+      className="w-full flex flex-col bg-gray-50 dark:bg-blue-950/30 border border-black/30 dark:border-white/20 rounded-xl overflow-hidden transition-transform hover:translate-y-0.5"
     >
-      {/* <div className="relative w-full aspect-video overflow-hidden">
-        <Image
-          src={project.thumbnail}
-          alt={project.name}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          priority={idx < 2}
-        />
-      </div> */}
-
       <BrowserFrame>
         <Image
           src={project.thumbnail}
           alt={project.name}
           fill
-          className="object-cover"
+          className="object-fill"
           sizes="(max-width: 768px) 100vw, 50vw"
           priority={idx < 2}
         />
