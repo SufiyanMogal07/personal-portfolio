@@ -1,7 +1,7 @@
 "use client";
 import { Github, Globe } from "lucide-react";
 import Image from "next/image";
-import { ToolTip } from "../ToolTip";
+import { ToolTip } from "../common/ToolTipComponent";
 
 interface ProjectCardProps {
   project: {

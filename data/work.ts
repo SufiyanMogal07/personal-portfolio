@@ -26,6 +26,15 @@ export const experienceData: experienceDataType[] = [
     location: "Noida (Remote)",
     description:
       "I developed and optimized responsive web pages using React.js, Next.js, and Tailwind CSS to ensure consistent performance across browsers and devices. By resolving critical frontend issues and applying efficient logic, I significantly improved the application’s stability and overall user experience. Leveraging Git and GitHub for version control, I maintained clean, well-documented code throughout the development process. Collaborating closely with senior developers in an Agile environment, I contributed to sprint planning and daily meetings, ensuring timely delivery and high-quality outcomes",
+  }, {
+    name: "Awwaltech",
+    logo: "/images/logos/awwaltech_logo.jpg",
+    website: "https://www.awwaltech.com/",
+    role: "Frontend Developer Intern",
+    date: "July 2025 - October 2025",
+    location: "Noida (Remote)",
+    description:
+      "I developed and optimized responsive web pages using React.js, Next.js, and Tailwind CSS to ensure consistent performance across browsers and devices. By resolving critical frontend issues and applying efficient logic, I significantly improved the application’s stability and overall user experience. Leveraging Git and GitHub for version control, I maintained clean, well-documented code throughout the development process. Collaborating closely with senior developers in an Agile environment, I contributed to sprint planning and daily meetings, ensuring timely delivery and high-quality outcomes",
   },
 ];
 
