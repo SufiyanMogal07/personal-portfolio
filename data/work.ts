@@ -31,15 +31,6 @@ export const experienceData: experienceDataType[] = [
 
 export const projectData: projectDataType[] = [
   {
-    thumbnail: "/images/projects/gsap_creative_website.png",
-    name: "Creative GSAP Website",
-    live: "https://gsap-creative-website.vercel.app/",
-    github: "https://github.com/SufiyanMogal07/gsap-creative-website",
-    tags: ["HTML", "CSS", "GSAP", "JavaScript"],
-    description:
-      "A creative inspiration website focused on motion design and interactive experiences. Built using HTML, CSS, and GSAP to explore smooth animations, scroll-based interactions, and modern UI transitions commonly used in marketing and creative agency websites.",
-  },
-  {
     thumbnail: "/images/projects/joblogs.png",
     name: "JobLogs - Job Tracker Application",
     live: "https://joblogs-frontend.vercel.app/",
@@ -57,4 +48,13 @@ export const projectData: projectDataType[] = [
     description:
       "A full-stack CRM system featuring JWT-based authentication, role-based access, and in-app notifications using Pusher. Designed with modular RESTful architecture and multi-admin data isolation for scalability.",
   },
+  {
+    thumbnail: "/images/projects/gsap_creative_website.png",
+    name: "Creative GSAP Website",
+    live: "https://gsap-creative-website.vercel.app/",
+    github: "https://github.com/SufiyanMogal07/gsap-creative-website",
+    tags: ["HTML", "CSS", "GSAP", "JavaScript"],
+    description:
+      "A creative inspiration website focused on motion design and interactive experiences. Built using HTML, CSS, and GSAP to explore smooth animations, scroll-based interactions, and modern UI transitions commonly used in marketing and creative agency websites.",
+  }
 ];

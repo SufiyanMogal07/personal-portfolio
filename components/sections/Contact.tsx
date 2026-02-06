@@ -56,9 +56,9 @@ export const Contact = () => {
           Please contact me directly at{" "}
           <a
             className="underline underline-offset-4 decoration-2 decoration-blue-500 hover:text-blue-600"
-            href="mailto:sufiyanmogal04@gmail.com"
+            href="mailto:sufiyanyaseenmogal@gmail.com"
           >
-            sufiyanmogal04@gmail.com
+            sufiyanyaseenmogal@gmail.com
           </a>{" "}
           or through this form.
         </p>
