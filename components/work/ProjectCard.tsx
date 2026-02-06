@@ -17,7 +17,7 @@ interface ProjectCardProps {
 
 export const BrowserFrame = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="w-full bg-linear-to-r from-cyan-500 to-blue-500 rounded-t-lg flex flex-col items-center p-2 lg:py-6 lg:px-12">
+    <div className="w-full bg-linear-to-r from-cyan-500 via-slate-500 to-blue-500 rounded-t-lg flex flex-col items-center p-5">
 
       <div className="bg-slate-200 w-full flex gap-x-1 px-4 py-1 rounded-t-lg">
         <div className="bg-red-500 w-3 h-3 rounded-full"></div>
