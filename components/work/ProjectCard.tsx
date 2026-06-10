@@ -1,7 +1,7 @@
 "use client";
 import { Github, Globe } from "lucide-react";
 import Image from "next/image";
-import { ToolTip } from "../ToolTip";
+import { ToolTipComponent as ToolTip } from "../common/ToolTipComponent";
 
 interface ProjectCardProps {
   project: {
@@ -17,9 +17,9 @@ interface ProjectCardProps {
 
 export const BrowserFrame = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="w-full bg-linear-to-r from-cyan-500 via-slate-500 to-blue-500 rounded-t-lg flex flex-col items-center p-5">
+    <div className="w-full bg-linear-to-r from-cyan-500 via-slate-500 to-blue-500 rounded-t-lg flex flex-col items-center p-2">
 
-      <div className="bg-slate-200 w-full flex gap-x-1 px-4 py-1 rounded-t-lg">
+      <div className="bg-slate-50 backdrop-blur-sm w-full flex gap-x-1 px-4 py-1 rounded-t-lg">
         <div className="bg-red-500 w-3 h-3 rounded-full"></div>
         <div className="bg-blue-500 w-3 h-3 rounded-full"></div>
         <div className="bg-yellow-500 w-3 h-3 rounded-full"></div>
@@ -49,15 +49,19 @@ export const ProjectCard = ({ project, idx }: ProjectCardProps) => {
         />
       </BrowserFrame>
       <div className="flex flex-col justify-between px-4 md:px-5 py-6 md:py-4 grow">
-        <div className="flex flex-col justify-between gap-y-2">
+        <div className="flex justify-between items-center">
           <h2 className="text-lg md:text-xl font-semibold">{project.name}</h2>
-          <div className="flex gap-x-2">
-            <ToolTip icon={Globe} url={project.live} label="Live" />
-            <ToolTip icon={Github} url={project.github} label="Github" />
+          <div className="flex items-center gap-x-3">
+            <ToolTip  url={project.live} label="Live">
+              <Globe size={22}/>
+            </ToolTip>
+            <ToolTip url={project.github} label="Github">
+              <Github size={22}/>
+            </ToolTip>
           </div>
         </div>
 
-        <p className="text-sm md:text-[15px] mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-sm md:text-[16px] mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
           {project.description}
         </p>
 

@@ -5,11 +5,9 @@ import { Contact } from "@/components/sections/Contact";
 export default function Home() {
   return (
     <div className="h-auto px-4">
-      {/* Home */}
       <HomePage />
       <Work />
       <Contact />
-      {/* <div id="contact"></div> */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { MobileNavigation } from "@/components/MobileNavigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -32,8 +32,8 @@ export const ClientProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <div className="relative" >
-    {/* onMouseMove={handleMouseMove} */}
+    <div className="relative">
+      {/* onMouseMove={handleMouseMove} */}
       <div
         className={`min-h-screen relative transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"

@@ -25,10 +25,10 @@ const NavBar = ({ isDropDownOpen, handleDropDown }: NavBarProps) => {
 
   return (
     <header className="container-responsive sticky inset-x-0 top-0 md:top-2 z-60 font-roboto">
-      <div className="bg-white/60 border-gray-300 dark:bg-white/10 dark:border-gray-100/20 backdrop-blur-md dark:backdrop-blur-sm shadow-[0_0_20px_rgba(112,100,240,0.2)] border md:rounded-full px-4 md:px-10 py-5 mx-auto flex justify-between items-center">
+      <div className="bg-white/60 border-gray-300 dark:bg-white/10 dark:border-gray-100/20 backdrop-blur-md dark:backdrop-blur-sm shadow-[0_0_20px_rgba(112,100,240,0.2)] border md:rounded-xl px-4 md:px-10 py-5 mx-auto flex justify-between items-center">
         <h2 className="text-2xl lg:text-[26px] font-extrabold">
           sufiyan
-          <span className="text-blue-500 dark:text-blue-400">Mogal.</span>
+          <span className="text-blue-500 dark:text-blue-400">.dev</span>
         </h2>
         <div className="flex items-center">
           <nav className="hidden md:block space-x-8 text-[16px]">
