@@ -9,13 +9,8 @@ export const navData = [
         label: "Work",
         url: "#work"
     },
-      {
-        id: 3,
-        label: "Project",
-        url: "#project"
-    },
     {
-        id: 4,
+        id: 3,
         label: "Contact",
         url: "#contact"
     },

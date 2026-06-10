@@ -3,7 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 
 export const ProjectSection = () => {
   return (
-    <div className="mt-10">
+    <div className="mt-15">
       <h5 className="text-gray-400 dark:text-gray-300 text-[16px]">Featured</h5>
       <h2 className="text-2xl font-bold">Projects</h2>
 

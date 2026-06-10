@@ -15,33 +15,44 @@ const HomePage = () => {
       id="home"
       className="w-full h-[80vh] max-h-[900px] mx-auto flex flex-col justify-center gap-y-4 md:gap-y-6 text-left font-ubuntu"
     >
-      <h1 className="text-3xl lg:text-4xl xl:text-[40px] font-bold leading-10">
-        <span className="bg-linear-to-r from-[#5A527E] to-[#7064F0] dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-          Sufiyan Mogal
-        </span>
-        <span>
-          {" "}
-          - Frontend Developer focused on High-Performance React Systems.
-        </span>
-      </h1>
+      <div className="md:leading-10">
+        <p className="inline-flex items-center gap-2 text-[12px] md:text-sm dark:text-white/80 bg-blue-200/20 dark:bg-white/5 px-3 py-1 rounded-full border border-blue-300/50 dark:border-white/10 backdrop-blur-md w-fit mb-5 cursor-pointer">
+          <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+          Open to opportunities
+        </p>
 
-      <div className="text-[17px] lg:text-[20px] leading-7 text-gray-500 dark:text-gray-400 ">
-        <h3 className="font">
-         Previously at Awwaltech , where I accelerated release cycles by 20% and reduced UI regressions by 30%. I specialize in building type-safe, scalable applications using Next.js and TypeScript that consistently achieve 90+ Lighthouse scores.
+        <h3 className="text-2xl lg:text-4xl xl:text-[44px] font-bold pb-3  text-slate-700 dark:text-slate-50">
+          Sufiyan Mogal
+        </h3>
+
+        <h4 className="text-[16px] md:text-[25px] font-bold text-slate-600 dark:text-slate-300">
+          Full Stack Developer specializing in React, Next.js, TypeScript,
+          Node.js, and PostgreSQL.
+        </h4>
+      </div>
+
+      <div className="text-[15px] md:text-[17px] lg:text-[20px] md:leading-7 text-gray-500 dark:text-gray-400">
+        <h3>
+         I build scalable web applications with a strong focus on user experience, perfomance, and maintainable architecture. Previously contributed to a production vehicle marketplace platform at Awwaltech.
         </h3>
       </div>
 
       <div className="mt-2 flex flex-wrap justify-start gap-3 text-sm md:text-base">
-        {["TypeScript", "React", "Next.js", "Tailwind CSS", "PHP", "MYSQL"].map(
-          (tech) => (
-            <span
-              key={tech}
-              className="px-4 py-2 border border-dashed border-gray-400 bg-blue-100/30 text-black dark:border-gray-100/30 dark:bg-slate-300/10 dark:text-gray-100 rounded-xl font-mono hover:border-blue-400 hover:text-blue-400 transition cursor-pointer"
-            >
-              {tech}
-            </span>
-          ),
-        )}
+        {[
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Node.js",
+          "PostgreSQL",
+          "Prisma",
+        ].map((tech) => (
+          <span
+            key={tech}
+            className="px-4 py-2 border border-dashed border-gray-400 bg-blue-100/30 text-black dark:border-gray-100/30 dark:bg-slate-300/10 dark:text-gray-100 rounded-xl font-mono hover:border-blue-400 hover:text-blue-400 transition cursor-pointer text-[12px] md:text-[16px]"
+          >
+            {tech}
+          </span>
+        ))}
       </div>
 
       <div className="mt-3 md:mt-6 flex flex-col lg:flex-row justify-start items-start lg:items-center gap-6">
@@ -56,6 +67,7 @@ const HomePage = () => {
               Resume / CV
             </button>
           </a>
+
           <button
             onClick={() => scrollToSection("#contact")}
             className="bg-black/80 hover:bg-black/70 text-white dark:bg-gray-100 dark:hover:bg-gray-200 dark:text-black border-gray-100/30 px-4 py-2.5 rounded-lg flex items-center text-base"

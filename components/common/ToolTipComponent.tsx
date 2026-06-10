@@ -19,7 +19,11 @@ export const ToolTipComponent = ({ children, url, label }: ToolTipProps) => {
     <TooltipProvider delayDuration={200}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <a target="_blank" href={url} className="text-gray-300 duration-300 hover:text-gray-100">
+          <a
+            target="_blank"
+            href={url}
+            className="text-gray-500 dark:text-gray-400 duration-300 hover:text-gray-400 dark:hover:text-gray-100"
+          >
             {children}{" "}
           </a>
         </TooltipTrigger>
